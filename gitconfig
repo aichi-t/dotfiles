@@ -1,0 +1,49 @@
+[user]
+	name = Aichi
+	email = aichitsuchihira@gmail.com
+[alias]
+  co = checkout
+  update-branch = !git stash -u && git co master && git gup && git co - && git rebase master && git stash pop
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  pr = pull --rebase
+  cb = rev-parse --symbolic-full-name --abbrev-ref HEAD
+  gp = !git push --set-upstream origin HEAD:$(git cb)
+  gup = !git fetch --prune origin && git rebase -r origin/$(git cb)
+  cleanup = !git branch --merged master | grep -v '^[ *]*master$' | xargs git branch -d
+  rc = rebase --continue
+  cp = cherry-pick
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+	ui = true
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[core]
+  editor = vim --noplugin
+  autocrlf = input
+[apply]
+  whitespace = nowarn
+[help]
+  autocorrect = 1
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+[push]
+  default = current
+[rerere]
+  enabled = 1
+[merge]
+	tool = sourcetree
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[interactive]
+  diffFilter = delta --color-only	
