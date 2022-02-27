@@ -7,6 +7,7 @@
     ~/.ssh/config:
         path: ssh/config
         create: true
+    ~/.config/karabiner: karabiner
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
