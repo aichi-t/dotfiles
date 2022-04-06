@@ -95,14 +95,7 @@ plugins+=(zsh-autosuggestions)
 
 
 source $ZSH/oh-my-zsh.sh
-
-#export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-#alias code="/Applications/VisualStudioCode.app/Contents/Resources/app/bin/code"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-alias htdc-rails="foreman start -f Procfile.dev -e .env.dev"
-alias c='code .'
-unalias l
-alias l='lazygit'
+source $HOME/.dotfiles/aliases.zsh
 
 # User configuration
 
