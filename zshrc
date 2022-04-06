@@ -139,7 +139,3 @@ bindkey -v
 #rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
-
-bindkey '\t' end-of-line
-bindkey '^[[Z' expand-or-complete
-
