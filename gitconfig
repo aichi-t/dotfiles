@@ -1,5 +1,5 @@
 [user]
-	name = Aichi
+	name = Aichi Tsuchihira
 	email = aichitsuchihira@gmail.com
 [alias]
   co = checkout
@@ -47,3 +47,5 @@
 	newHighlight = green bold 22
 [interactive]
   diffFilter = delta --color-only	
+[credential]
+	helper = osxkeychain
