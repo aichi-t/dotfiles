@@ -1,16 +1,14 @@
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.profile: profile
     ~/.bash_profile: bash_profile
     ~/.gitconfig: gitconfig
+    ~/.hammerspoon: hammerspoon
     ~/.ssh/config:
-        path: ssh/config
-        create: true
+      path: ssh/config
+      create: true
     ~/.config/karabiner: karabiner
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
-
-
-
