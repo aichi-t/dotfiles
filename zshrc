@@ -6,21 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ZSH_DISABLE_COMPFIX=true
-VOLTA_HOME=$HOME/.volta
-
-
-# homebrew
-#export PATH="/opt/homebrew/bin:$PATH"
-#echo 'export PATH="/opt/homebrew/bin:$PATH"' >> $HOME/.zshrc
 
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$VOLTA_HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/aichitsuchihira/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -28,7 +17,7 @@ export ZSH="/Users/aichitsuchihira/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Set list of themes to pick from when loading at random
@@ -91,11 +80,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 plugins+=(autojump)
-plugins+=(zsh-autosuggestions)
+# plugins+=(zsh-autosuggestions)
+
+# autosuggestions setup
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
-source $ZSH/oh-my-zsh.sh
+# Autojump setup
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/aliases.zsh
+setopt autocd
 
 # User configuration
 
@@ -123,19 +120,14 @@ source $HOME/.dotfiles/aliases.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Enable vim mode
+bindkey -v
 
-# Add Visual Studio Code (code)
-# export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/aichitsuchihira/.asdf/shims:/usr/local/opt/asdf/bin:/Users/aichitsuchihira/bin:/Users/aichitsuchihira/.volta/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Enable vim mode
-bindkey -v
-
-
-#rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
+# use nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
