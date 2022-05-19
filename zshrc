@@ -139,3 +139,13 @@ bindkey -v
 #rbenv
 export PATH="$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/aichitsuchihira/hotdoc/lambda-chrome-pdf-render/node_modules/tabtab/.completions/slss.zsh
